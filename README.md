@@ -1,7 +1,5 @@
 # 🎰 Personal Online Casino
-My personal project on building a local casino with python just for fun. You can check it out if you want and give me feedback or tipps on how to improve it. 
-It's NOT finished i barely just began with the new project and wanted to discover git for myself. 
-In my old project i just threw all code into one doc (it doesn't even work correctly anymore) and with my new project i wanted to try to distribute and hopefully make it less messy.
+Das ist ein persönliches Projekt, bei dem ich aus Spaß ein lokales Casino mit Python programmiere. Du kannst es dir gerne ansehen und mir Feedback oder Tipps zur Verbesserung geben. Es ist noch NICHT fertig; ich habe gerade erst mit dem neuen Projekt begonnen und wollte dabei Git für mich entdecken. Bei meinem alten Projekt hatte ich einfach den gesamten Code in eine einzige Datei gepackt (der mittlerweile nicht einmal mehr richtig funktioniert), und beim neuen Projekt wollte ich versuchen, den Code aufzuteilen und das Ganze hoffentlich etwas übersichtlicher zu gestalten.
 
 
 ## 🚀 Features (Geplant & Umgesetzt)
