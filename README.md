@@ -12,7 +12,7 @@ In my old project i just threw all code into one doc (it doesn't even work corre
 
 ## 🛠️ Installation & Start
 1. Repository klonen:
-   `git clone https://github.com`
+   `git clone https://github.com/IIIDragonIII/PersonalOnlineCasino/`
 2. Pygame installieren:
    `pip install pygame`
 3. Spiel starten:
