@@ -48,6 +48,8 @@ class Blackjack:
     dealer_win = False
     spieler_win = False
     cause = ""
+    anzeige = ""
+    wert = 0
 
     def DeckErstellen(self):
         for symbol in self.symbole:
@@ -60,6 +62,8 @@ class Blackjack:
             gezogen = self.kartenstapel.pop()
             wert = int(self.kartenWert[gezogen[0]])
             anzeige = f"{gezogen[1]}{gezogen[0]}"
+            self.anzeige = anzeige
+            self.wert = wert
             return anzeige, wert
         else:
             print("Der Kartenstapel ist leer.")
