@@ -58,7 +58,7 @@ class Blackjack:
     def Ziehen(self):
         if len(self.kartenstapel) > 0:
             gezogen = self.kartenstapel.pop()
-            wert = self.kartenWert[gezogen[0]]
+            wert = int(self.kartenWert[gezogen[0]])
             anzeige = f"{gezogen[1]}{gezogen[0]}"
             return anzeige, wert
         else:
@@ -73,12 +73,14 @@ class Blackjack:
             self.dealer_blackjack = True
             self.no_comparison = True
             return self.dealer_blackjack
+
     def ÜberEinundzwanzig(self, spieler_gesamt_wert, dealer_gesamt_wert):
         
         if spieler_gesamt_wert > 21:
             self.dealer_win, self.cause = True, "Spieler hat über 21"
         elif dealer_gesamt_wert > 21:
             self.spieler_win, self.cause = True, "Dealer hat über 21"
+
     def EndKartenWert(self, spieler_gesamt_wert, dealer_gesamt_wert):
         if spieler_gesamt_wert > dealer_gesamt_wert:
             self.spieler_win, self.cause = True, "Spieler hat mehr"
@@ -87,7 +89,23 @@ class Blackjack:
         elif spieler_gesamt_wert == dealer_gesamt_wert:
             self.cause = "Unentschieden"
 
-    def GameVariableReset(self):
+    def NächsterZug(self):
+        zug = input("Was möchtest du tun? (hit/stand/double): \n")
+        if zug == "hit":
+            self.Ziehen()
+            return "\r hit                                    ", self.anzeige, self.wert
+        elif zug == "stand":
+            return "\r stand"
+        elif zug == "double                                    " and Jetons.einsatz * 2 <= Jetons.jetons:
+            self.Ziehen()
+            Jetons.jetons -= Jetons.einsatz
+            Jetons.einsatz *= 2
+            return "\r double                                    "
+        else:
+            print("\r Ungültige Eingabe. Bitte wähle 'hit', 'stand' oder 'double'.")
+
+
+    def SpielVariablenZurücksetzen(self):
         self.spieler_blackjack = False
         self.dealer_blackjack = False
         self.no_comparison = False

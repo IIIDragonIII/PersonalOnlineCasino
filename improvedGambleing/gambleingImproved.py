@@ -27,22 +27,24 @@ bj.Mischen()
 erste_karte, erster_wert = bj.Ziehen()
 zweite_karte, zweiter_wert = bj.Ziehen()
 gesamt_wert = erster_wert + zweiter_wert
-print("1. Karte:", erste_karte, "2. Karte:", zweite_karte, "Gesamt:", gesamt_wert)
+print("Spieler:", erste_karte, zweite_karte, "Gesamt:", gesamt_wert)
 
 #Karten für Dealer ziehen
 dealer_erste_karte, dealer_erster_wert = bj.Ziehen()
 dealer_zweite_karte, dealer_zweiter_wert = bj.Ziehen()
 dealer_gesamt_wert = dealer_erster_wert + dealer_zweiter_wert
-print(f"Dealer: {dealer_erste_karte} [_] Gesamt: {dealer_erster_wert}",end="/r", flush=True)
+print(f"Dealer: {dealer_erste_karte} [_] Gesamt: {dealer_erster_wert}")
 
 bj.KartenBlackjack(gesamt_wert, dealer_gesamt_wert)
 if bj.spieler_blackjack == True:
-    print(f"Dealer: {dealer_erste_karte} [_] Gesamt: {dealer_erster_wert}")
+    print(f"\r Dealer: {dealer_erste_karte} {dealer_zweite_karte} Gesamt: {dealer_erster_wert}")
     print("Spieler hat Blackjack!")
     
 elif bj.dealer_blackjack == True:
-    print(f"Dealer: {dealer_erste_karte} {dealer_zweite_karte} Gesamt: {dealer_gesamt_wert}")
+    print(f"\r Dealer: {dealer_erste_karte} {dealer_zweite_karte} Gesamt: {dealer_gesamt_wert}")
     print("Dealer hat Blackjack!")
-    
-if not bj.no_comparison:
-    bj.ÜberEinundzwanzig(gesamt_wert, dealer_gesamt_wert)
+
+else:
+    bj.NächsterZug()
+    if bj.NächsterZug == "hit":
+        exit 
