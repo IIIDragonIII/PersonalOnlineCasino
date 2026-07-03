@@ -47,4 +47,6 @@ elif bj.dealer_blackjack == True:
 else:
     bj.NächsterZug()
     if bj.NächsterZug == "hit":
-        exit 
+        exit
+    elif bj.NächsterZug == "stand":
+        exit
